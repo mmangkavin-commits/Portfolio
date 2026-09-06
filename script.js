@@ -40,3 +40,8 @@ function myFunction() {
         `;
     }
 }
+AOS.init({
+  duration: 800,
+  once: true, // Animates elements only once so the scrollbar won't keep re-calculating
+  disableMutationObserver: false,
+});
