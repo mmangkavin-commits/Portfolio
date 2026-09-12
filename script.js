@@ -1,14 +1,12 @@
-function myFunction() {
-  document.body.classList.toggle("dark-mode");
-}
+// Theme Toggle Function (Moon <-> Sun)
 function myFunction() {
     document.body.classList.toggle("dark-mode");
 
     const icon = document.getElementById("modeIcon");
+    if (!icon) return;
 
     if (document.body.classList.contains("dark-mode")) {
-
-        // Change Moon → Sun
+        // Change Moon → Sun Icon
         icon.innerHTML = `
             <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8
             M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5
@@ -19,10 +17,8 @@ function myFunction() {
             .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5
             0 0 1 .707 0"/>
         `;
-
     } else {
-
-        // Change Sun → Moon
+        // Change Sun → Moon Icon
         icon.innerHTML = `
             <path d="M6 .278a.77.77 0 0 1 .08.858
             7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277
@@ -40,8 +36,25 @@ function myFunction() {
         `;
     }
 }
-AOS.init({
-  duration: 800,
-  once: true, // Animates elements only once so the scrollbar won't keep re-calculating
-  disableMutationObserver: false,
+
+// Initialize libraries once DOM content is fully loaded
+document.addEventListener("DOMContentLoaded", function () {
+    // AOS Animation Init
+    if (typeof AOS !== "undefined") {
+        AOS.init({
+            duration: 800,
+            once: true,
+            disableMutationObserver: false,
+        });
+    }
+
+    // Typed.js Animation Init
+    if (typeof Typed !== "undefined") {
+        var typed = new Typed(".text", {
+            strings: [" Developer", "Youtuber", "Freelancer"],
+            typeSpeed: 100,
+            backSpeed: 100,
+            loop: true,
+        });
+    }
 });

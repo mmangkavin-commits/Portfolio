@@ -15,13 +15,13 @@ body {
 }
 
 body {
-  color: #000000;
+  color: #171717; /* Light Mode: Main Text */
   font-family: system-ui, -apple-system, sans-serif;
-  background-color: #0b0712;
-  transition: color 0.3s ease;
+  background-color: #F5F5F7; /* Light Mode: Background */
+  transition: color 0.3s ease, background-color 0.3s ease;
 }
 
-/* GPU-Accelerated Background Layer (Fixes Initial Scroll Lag) */
+/* GPU-Accelerated Background Layer */
 body::before {
   content: "";
   position: fixed;
@@ -29,22 +29,22 @@ body::before {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-image: url("./v.jpg");
+  background-color: #F5F5F7; /* Light Mode: Background */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   z-index: -999;
   will-change: transform;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, background-color 0.3s ease;
 }
 
 body.dark-mode::before {
-  background-image: url("./purple.jpg");
+  background-color: #15111A; /* Dark Mode: Background */
 }
 
 body.dark-mode {
-  background-color: #121212;
-  color: #ffffff;
+  background-color: #15111A; /* Dark Mode: Background */
+  color: #F5F5F5; /* Dark Mode: Main Text */
 }
 
 img,
@@ -61,11 +61,15 @@ a {
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
-  background-color: #000000;
+  background-color: #F5F5F7;
+}
+
+body.dark-mode ::-webkit-scrollbar {
+  background-color: #15111A;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #c54ecb;
+  background-color: #C54ECB; /* Your Purple */
   border-radius: 10px;
 }
 
@@ -80,22 +84,26 @@ a {
   justify-content: space-between;
   align-items: center;
   padding: 15px 50px;
-  background-image: url(https://i.pinimg.com/1200x/9d/45/b5/9d45b5bc87976e684c6d8a4d87a5bfc6.jpg);
+  background-color: #FFFFFF; /* Light Mode: Card/Nav Surface */
+  border-bottom: 2px solid rgba(197, 78, 203, 0.3);
   background-size: cover;
   background-position: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .navbar-brand {
-  color: #ffffff;
+  color: #171717;
   text-decoration: none;
 }
 
 .va {
+  color: #C54ECB; /* Your Purple */
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-style: italic;
   font-size: 20px;
-  font-family: sans-serif;
-  font-weight: 800;
+  text-decoration: none;
   letter-spacing: -0.03em;
   padding: 9px;
 }
@@ -109,7 +117,7 @@ a {
 
 .navbar .nav-link {
   position: relative;
-  color: #ffffff;
+  color: #171717;
 }
 
 .navbar .nav-link::after {
@@ -119,7 +127,7 @@ a {
   bottom: 3px;
   width: 0;
   height: 2px;
-  background: purple;
+  background: #C54ECB; /* Your Purple */
   transition: width 0.3s ease;
 }
 
@@ -129,21 +137,23 @@ a {
 
 /* Dark Mode Navbar */
 body.dark-mode .navbar {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
+  background-color: #1D1822; /* Dark Mode: Cards/Surface */
+  background-image: linear-gradient(rgba(29, 24, 34, 0.85), rgba(29, 24, 34, 0.85)),
     url(https://i.pinimg.com/1200x/15/3d/c0/153dc0921cea30a84d050d2cc663d084.jpg);
-  border-bottom: 1px solid rgba(197, 78, 203, 0.3);
+  border-bottom: 2px solid rgba(197, 78, 203, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 body.dark-mode .navbar-brand {
-  color: #c54ecb;
+  color: #C54ECB;
 }
 
 body.dark-mode .navbar-nav a {
-  color: #ffffff;
+  color: #F5F5F5;
 }
 
 body.dark-mode .navbar-nav a:hover {
-  color: #c54ecb;
+  color: #C54ECB;
 }
 
 /* ==================== HERO SECTION ==================== */
@@ -167,7 +177,7 @@ body.dark-mode .navbar-nav a:hover {
 }
 
 .na span {
-  color: #c54ecb;
+  color: #C54ECB; /* Your Purple */
 }
 
 .na .flex, 
@@ -178,7 +188,18 @@ body.dark-mode .navbar-nav a:hover {
 }
 
 .lulu {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Arial Black", sans-serif;
+  font-style: italic;
+  font-weight: 900;
+}
+
+/* Secondary Text Helper Class */
+.text-secondary {
+  color: #666666;
+}
+
+body.dark-mode .text-secondary {
+  color: #B8B8B8;
 }
 
 /* ==================== RGB ANIMATED BUTTON ==================== */
@@ -202,7 +223,7 @@ body.dark-mode .navbar-nav a:hover {
   text-transform: uppercase;
   letter-spacing: 1px;
   color: #ffffff !important;
-  background-color: #0d0614 !important;
+  background-color: #171717 !important;
   padding: 12px 28px;
   border-radius: 50px;
   text-decoration: none;
@@ -263,7 +284,7 @@ body.dark-mode .navbar-nav a:hover {
 
 /* Dark Mode Overrides */
 body.dark-mode .btn {
-  background-color: #08030d !important;
+  background-color: #1D1822 !important;
   color: #ffffff !important;
 }
 
@@ -284,8 +305,8 @@ body.dark-mode .btn {
   height: 320px;
   object-fit: cover;
   border-radius: 50%;
-  border: 4px solid #c54ecb;
-  box-shadow: 0 0 10px #c54ecb, 0 0 25px #c54ecb, 0 0 45px #c54ecb;
+  border: 4px solid #C54ECB; /* Your Purple */
+  box-shadow: 0 0 10px #C54ECB, 0 0 25px #C54ECB, 0 0 45px #C54ECB;
   animation: profileFloat 3s ease-in-out infinite;
   will-change: transform;
 }
@@ -308,8 +329,8 @@ body.dark-mode .btn {
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   width: 100%;
-  border-top: 1px solid rgba(229, 231, 235, 0.3);
-  border-bottom: 1px solid rgba(229, 231, 235, 0.3);
+  border-top: 1px solid rgba(197, 78, 203, 0.2);
+  border-bottom: 1px solid rgba(197, 78, 203, 0.2);
 }
 
 .ma {
@@ -318,6 +339,15 @@ body.dark-mode .btn {
 
 .ma h2 {
   margin-bottom: 5px;
+  color: #C54ECB;
+}
+
+.ma p {
+  color: #666666;
+}
+
+body.dark-mode .ma p {
+  color: #B8B8B8;
 }
 
 /* ==================== ABOUT SECTION ==================== */
@@ -354,17 +384,6 @@ body.dark-mode .btn {
   padding: 0 20px;
 }
 
-/* article {
-  background-color: #808080;
-  border-radius: 12px;
-  padding: 20px;
-} */
-
-/* body.dark-mode article {
-  background-color: #c54ecb;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-} */
-
 h2 {
   margin: 0 0 30px;
 }
@@ -377,6 +396,7 @@ svg {
   width: 24px;
   height: 24px;
   margin: 10px 0;
+  fill: #C54ECB;
 }
 
 section {
@@ -394,23 +414,37 @@ main {
 }
 
 /* Base Card Layout */
+/* Base Card Layout - Light Mode with Dark Overlay for White Text */
 .card {
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100%;
   min-height: 250px;
-  background-image: url("https://i.pinimg.com/1200x/bc/9d/6c/bc9d6c00a01e6f5aa1935b8d9a494462.jpg");
+  /* Dark overlay over the background image */
+  background-image: linear-gradient(rgba(15, 10, 25, 0.65), rgba(15, 10, 25, 0.65)), 
+                    url("https://i.pinimg.com/1200x/bc/9d/6c/bc9d6c00a01e6f5aa1935b8d9a494462.jpg") !important;
   background-size: cover;
   background-position: center;
-  color: white;
+  color: #FFFFFF !important;              /* Crisp White Text */
   border-radius: 16px;
-  padding: 20px;
+  padding: 24px;
   position: relative;
   overflow: hidden;
-  border: 2px solid transparent;
-  transition: border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 2px solid rgba(197, 78, 203, 0.4);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform;
+}
+
+/* Ensure all elements inside inherit pure white text */
+.card h3,
+.card h4,
+.card p,
+.card a,
+.card span {
+  color: #FFFFFF !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Drop shadow so white text jumps out */
 }
 
 .card p {
@@ -421,12 +455,12 @@ main {
   overflow: hidden;
   text-overflow: ellipsis;
   margin-bottom: 12px;
+  opacity: 0.9;
 }
 
 .card:hover {
-  border-color: rgb(232, 124, 244);
-  color: rgb(232, 124, 244);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
+  border-color: #C54ECB;
+  box-shadow: 0 12px 30px rgba(197, 78, 203, 0.35);
 }
 
 .card[data-aos].aos-animate:hover {
@@ -464,11 +498,11 @@ main {
 }
 
 .tags span {
-  background-color: #c54ecb;
-  color: #070707;
+  background-color: #C54ECB; /* Your Purple */
+  color: #FFFFFF;
   padding: 6px 16px;
   border-radius: 50px;
-  border: 2px solid #000000;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   font-size: 13px;
   font-weight: 600;
 }
@@ -476,7 +510,7 @@ main {
 div a {
   position: relative;
   text-decoration: none;
-  color: rgb(255, 255, 255);
+  color: inherit;
 }
 
 div a::after {
@@ -486,7 +520,7 @@ div a::after {
   bottom: -4px;
   width: 0;
   height: 2px;
-  background-color: #c54ecb;
+  background-color: #C54ECB;
   transition: width 0.3s ease;
 }
 
@@ -505,10 +539,16 @@ div a:hover::after {
 }
 
 .box {
-  background-color: #c54ecb;
-  color: #000000;
+  background-color: #FFFFFF; /* Light Mode: Card Surface */
+  color: #171717;
   padding: 20px;
   border-radius: 12px;
+  border: 1px solid rgba(197, 78, 203, 0.2);
+}
+
+body.dark-mode .box {
+  background-color: #1D1822; /* Dark Mode: Card Surface */
+  color: #F5F5F5;
 }
 
 section {
@@ -517,10 +557,11 @@ section {
 
 /* ==================== CONTACT SECTION ==================== */
 .yo {
-  background-image: url(https://i.pinimg.com/1200x/bc/9d/6c/bc9d6c00a01e6f5aa1935b8d9a494462.jpg);
+  background-color: #FFFFFF;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url(https://i.pinimg.com/1200x/bc/9d/6c/bc9d6c00a01e6f5aa1935b8d9a494462.jpg);
   background-size: cover;
   background-position: center;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(197, 78, 203, 0.3);
   border-radius: 24px;
   padding: 48px;
   display: grid;
@@ -528,6 +569,11 @@ section {
   gap: 40px;
   max-width: 1100px;
   margin: 0 auto;
+}
+
+body.dark-mode .yo {
+  background-color: #1D1822;
+  background-image: linear-gradient(rgba(29, 24, 34, 0.9), rgba(29, 24, 34, 0.9)), url(https://i.pinimg.com/1200x/bc/9d/6c/bc9d6c00a01e6f5aa1935b8d9a494462.jpg);
 }
 
 .social-item {
@@ -538,6 +584,11 @@ section {
 
 .social-item p {
   margin: 0;
+  color: #666666;
+}
+
+body.dark-mode .social-item p {
+  color: #B8B8B8;
 }
 
 .social-list {
@@ -548,21 +599,29 @@ section {
 
 input,
 textarea {
-  background-color: rgba(0, 0, 0, 0.3);
-  color: #ffffff;
-  border: 1px solid #c54ecb;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #171717;
+  border: 1px solid #C54ECB;
   border-radius: 15px;
   padding: 12px 16px;
   width: 100%;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(5px);
+}
+
+body.dark-mode input,
+body.dark-mode textarea {
+  background-color: rgba(21, 17, 26, 0.6);
+  color: #F5F5F5;
 }
 
 input::placeholder,
 textarea::placeholder {
-  color: rgb(188, 175, 175);
+  color: #666666;
 }
-input{
-  backdrop-filter:blur(10px);
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+  color: #B8B8B8;
 }
 
 .ra {
@@ -588,14 +647,14 @@ input{
 }
 
 .eno {
-  color: white;
+  color: inherit;
 }
 
 .ic,
 .id {
   width: 100%;
   height: 48px;
-   backdrop-filter:blur(10px);
+  backdrop-filter: blur(10px);
 }
 
 .message {
@@ -605,7 +664,7 @@ input{
 }
 
 .ui:hover {
-  color: #c54ecb;
+  color: #C54ECB;
 }
 
 .io {
@@ -629,6 +688,11 @@ footer {
   margin: 0 auto;
   padding: 24px 20px;
   gap: 16px;
+  color: #666666;
+}
+
+body.dark-mode footer {
+  color: #B8B8B8;
 }
 
 .cilent {
@@ -641,8 +705,47 @@ footer {
   height: 50px;
   aspect-ratio: 1 / 1;
   margin-left: 30px;
-  background-color: #c54ecb;
+  background-color: #C54ECB;
   border-radius: 50%;
+}
+/* Dark Mode Toggle Button Icon Fix */
+.er {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 40px !important;
+  height: 40px !important;
+  margin-left: 0 !important;
+  background-color: #C54ECB; /* Your Purple */
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  color: #FFFFFF !important; /* Forces icon to white */
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+/* Ensure SVG/Font icons inside the toggle button inherit white */
+/* Fix Sun/Moon Icon Visibility */
+.er svg {
+  width: 20px;
+  height: 20px;
+  /* Use dark gray/black icon color for high contrast against the purple button */
+  fill: #15111A !important;
+  stroke: #15111A !important;
+  transition: transform 0.3s ease;
+}
+
+.er:hover svg {
+  transform: rotate(30deg); /* Nice subtle rotation effect on hover */
+}
+body.dark-mode .er {
+  background-color: #1D1822 !important; /* Matches card dark bg */
+  border: 2px solid #C54ECB !important;  /* Purple accent border */
+}
+
+body.dark-mode .er svg {
+  fill: #C54ECB !important; /* Bright purple sun icon */
+  stroke: #C54ECB !important;
 }
 
 /* ==================== RESPONSIVE BREAKPOINTS ==================== */
@@ -849,5 +952,69 @@ footer {
 
   section {
     padding: 20px 0 40px 0;
+  }
+}
+
+/* Container for action buttons */
+.nav-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+/* Ensure Dark Mode button styling remains consistent */
+.er {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 40px !important;
+  height: 40px !important;
+  margin-left: 0 !important;
+  background-color: #C54ECB;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+/* Hamburger Lines Styling */
+.hamburger-lines {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  width: 24px !important;
+  height: 18px !important;
+}
+
+.hamburger-lines span {
+  display: block !important;
+  height: 3px !important;
+  width: 100% !important;
+  background-color: #171717 !important;
+  border-radius: 2px !important;
+}
+
+body.dark-mode .hamburger-lines span {
+  background-color: #F5F5F5 !important;
+}
+
+.navbar-toggler {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+/* Desktop View: Hide Hamburger */
+@media (min-width: 992px) {
+  .navbar-toggler {
+    display: none !important;
+  }
+}
+
+/* Mobile View: Show Hamburger alongside Dark Mode button */
+@media (max-width: 991px) {
+  .navbar-toggler {
+    display: block !important;
   }
 }

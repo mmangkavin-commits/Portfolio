@@ -41,55 +41,55 @@
 
     <!-- JS Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 </head>
 <body class="bg-white">
     <!-- ==================== NAVBAR ==================== -->
-    <section class="container">
-        <header>
-            <nav class="navbar navbar-expand-lg sticky-top">
-                <div class="container-fluid flex items-center justify-between w-full">
-                    <!-- Logo -->
-                    <a href="index.html" class="va">
-                        Ka<span style="color: #c54ecb;">vin</span>
-                    </a>
+<section class="container">
+    <header>
+        <nav class="navbar navbar-expand-lg sticky-top">
+            <div class="container-fluid flex items-center justify-between w-full">
+                <!-- Logo -->
+               <a href="index.html" class="va">
+    Ka<span style="color: #c54ecb;">vin</span>
+</a>
 
-                    <!-- Mobile menu button -->
-                    <button class="navbar-toggler md:hidden p-2 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                        <span class="navbar-toggler-icon"></span>
+                <!-- Navigation links -->
+                <nav class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <ul class="navbar-nav flex items-center gap-6">
+                        <li class="nav-item"><a class="nav-link" href="#20" style="color: #c54ecb;">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#21" style="color: #c54ecb;">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#22" style="color: #c54ecb;">Work</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#23" style="color: #c54ecb;">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#24" style="color: #c54ecb;">Reviews</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#25" style="color: #c54ecb;">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#26" style="color: #c54ecb;">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Actions Container: Both Buttons Side-by-Side -->
+                <div class="nav-actions flex items-center gap-3">
+                    <!-- Dark Mode Button (Always Visible) -->
+                    <button class="er dark-mode-toggle" onclick="myFunction()" aria-label="Toggle theme">
+                        <svg id="modeIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278"/>
+                            <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.73 1.73 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.73 1.73 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.73 1.73 0 0 0 1.097-1.097z"/>
+                        </svg>
                     </button>
 
-                    <!-- Navigation links -->
-                    <nav class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                        <ul class="navbar-nav flex items-center gap-6">
-                            <li class="nav-item"><a class="nav-link" href="#20" style="color: #c54ecb;">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#21" style="color: #c54ecb;">Services</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#22" style="color: #c54ecb;">Work</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#23" style="color: #c54ecb;">About</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#24" style="color: #c54ecb;">Reviews</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#25" style="color: #c54ecb;">Blog</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#26" style="color: #c54ecb;">Contact</a></li>
-                        </ul>
-                    </nav>
-
-                    <!-- Theme Toggle Button -->
-              <button class="er" onclick="myFunction()">
-    <svg id="modeIcon"
-        xmlns="http://www.w3.org/2000/svg"
-        width="16"
-        height="16"
-        fill="currentColor"
-        viewBox="0 0 16 16">
-
-        <!-- Moon icon -->
-        <path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278"/>
-
-        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.73 1.73 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.73 1.73 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.73 1.73 0 0 0 1.097-1.097z"/>
-    </svg>
-</button>
+                    <!-- Mobile Menu Toggler (Mobile Only) -->
+                    <button class="navbar-toggler p-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <div class="hamburger-lines">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </button>
                 </div>
-            </nav>
-        </header>
-    </section>
+            </div>
+        </nav>
+    </header>
+</section>
 
     <!-- ==================== HERO SECTION ==================== -->
     <header id="20">
@@ -104,6 +104,7 @@
                     <h1 class="lulu text-4xl md:text-5xl font-bold mb-4">
                         Hi, I'm <span style="color: #c54ecb;">Kavin</span>
                     </h1>
+                    <h3>And I'm a <span class="text"></span></h3>
 
                     <p class="text-slate-300 mb-6 leading-relaxed">
                         Freelance <b>UX/UI Designer & Frontend Developer.</b> I design and build digital products that people love to use — fast, clean, and accessible.
@@ -463,7 +464,9 @@
                         <input class="id" type="text" placeholder="Project inquiry">
                         <label for="text">Message</label><br>
                         <input class="message" type="text" placeholder="Tell me about your project">
-                        <button type="submit" class="btn btn-success mt-3">Send message</button>
+                        <div class="d-flex justify-content-center">
+    <button type="submit" class="btn btn-success mt-3">Send message</button>
+</div>
                     </form>
                 </div>
             </div>
@@ -490,5 +493,6 @@
             once: true
         });
     </script>
+    
 </body>
 </html>
