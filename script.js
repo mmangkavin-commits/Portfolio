@@ -66,7 +66,7 @@ if (techOrbit) {
 
     let angle = 0;
 
-    // Speed of rotation
+    // Rotation speed
     const speed = 0.0025;
 
     function animateOrbit() {
@@ -78,30 +78,51 @@ if (techOrbit) {
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
 
-        // Size of circular path
-        const radiusX = 205;
-        const radiusY = 205;
+        /*
+         * Responsive orbit radius
+         *
+         * Desktop  = 205px
+         * Tablet   = smaller
+         * Mobile   = smaller
+         */
+        let radius;
+
+        if (window.innerWidth <= 330) {
+            radius = 135;
+        } 
+        else if (window.innerWidth <= 360) {
+            radius = 145;
+        } 
+        else if (window.innerWidth <= 480) {
+            radius = 160;
+        } 
+        else if (window.innerWidth <= 768) {
+            radius = 175;
+        } 
+        else if (window.innerWidth <= 1100) {
+            radius = 190;
+        } 
+        else {
+            radius = 205;
+        }
 
         logos.forEach((logo, index) => {
 
-            // Evenly distribute logos around circle
+            // Evenly distribute logos
             const logoAngle =
                 angle +
                 (index / logos.length) * Math.PI * 2;
 
             const x =
                 centerX +
-                Math.cos(logoAngle) * radiusX;
+                Math.cos(logoAngle) * radius;
 
             const y =
                 centerY +
-                Math.sin(logoAngle) * radiusY;
+                Math.sin(logoAngle) * radius;
 
             /*
              * Fake 3D depth
-             *
-             * Front = bigger
-             * Back = smaller
              */
             const depth =
                 (Math.sin(logoAngle) + 1) / 2;
@@ -126,12 +147,11 @@ if (techOrbit) {
 
             logo.style.opacity =
                 0.65 + depth * 0.35;
-
         });
 
         requestAnimationFrame(animateOrbit);
-
     }
 
     animateOrbit();
+
 }

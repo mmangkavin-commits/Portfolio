@@ -1029,184 +1029,6 @@ body.dark-mode .er svg {
 
     transition: transform 0.2s ease-out;
 }
-
-/* ==========================================
-   TECH SECTION
-========================================== */
-
-.tech-section {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    padding: 80px 0;
-
-    overflow: hidden;
-}
-
-
-/* ==========================================
-   RESPONSIVE WRAPPER
-========================================== */
-
-.tech-orbit-wrapper {
-    width: 480px;
-    height: 480px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    flex-shrink: 0;
-}
-
-
-/* ==========================================
-   TECH ORBIT
-========================================== */
-
-.tech-orbit {
-    position: relative;
-
-    width: 480px;
-    height: 480px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    perspective: 1000px;
-    transform-style: preserve-3d;
-
-    transition: transform 0.2s ease-out;
-}
-
-
-/* ==========================================
-   TABLET
-========================================== */
-
-@media (max-width: 768px) {
-
-    .tech-section {
-        padding: 60px 0;
-    }
-
-    .tech-orbit-wrapper {
-        width: 420px;
-        height: 420px;
-    }
-
-    .tech-orbit {
-        transform: scale(0.875);
-    }
-}
-
-
-/* ==========================================
-   MOBILE
-========================================== */
-
-@media (max-width: 480px) {
-
-    .tech-section {
-        width: 100%;
-        padding: 40px 0;
-
-        overflow: hidden;
-    }
-
-    .tech-orbit-wrapper {
-        width: 360px;
-        height: 360px;
-    }
-
-    .tech-orbit {
-        width: 480px;
-        height: 480px;
-
-        transform: scale(0.75);
-    }
-}
-
-
-/* ==========================================
-   SMALL PHONE 320px
-========================================== */
-
-@media (max-width: 360px) {
-
-    .tech-section {
-        padding: 30px 0;
-    }
-
-    .tech-orbit-wrapper {
-        width: 320px;
-        height: 320px;
-    }
-
-    .tech-orbit {
-        width: 480px;
-        height: 480px;
-
-        transform: scale(0.67);
-    }
-}
-/* ==========================================
-   MOBILE
-========================================== */
-
-@media (max-width: 768px) {
-
-    .tech-orbit {
-
-        width: 360px;
-        height: 360px;
-
-    }
-
-    .tech-globe {
-
-        width: 200px;
-        height: 200px;
-
-    }
-
-    .tech-orbit::before {
-
-        width: 300px;
-        height: 300px;
-
-    }
-
-    .tech-orbit::after {
-
-        width: 280px;
-        height: 280px;
-
-    }
-
-    .tech-logo {
-
-        width: 62px;
-        height: 48px;
-
-        font-size: 8px;
-
-    }
-
-    .tech-logo span {
-
-        width: 22px;
-        height: 22px;
-
-        font-size: 9px;
-
-    }
-
-}
-
 /* ==================== RESPONSIVE BREAKPOINTS ==================== */
 
 /* TABLET (max-width: 992px) */
@@ -1478,103 +1300,62 @@ body.dark-mode .hamburger-lines span {
   }
 }
 /* ==========================================
-   MOBILE TECH ORBIT
+   TECH ORBIT RESPONSIVE
 ========================================== */
 
-@media (max-width: 768px) {
+.tech-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
 
-    .tech-section {
-        width: 100%;
-        padding: 40px 0;
-        overflow: hidden;
-    }
+.tech-orbit-wrapper {
+    width: 480px;
+    height: 480px;
 
-    .tech-orbit-wrapper {
-        width: 360px;
-        height: 360px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        flex-shrink: 0;
-    }
-
-    .tech-orbit {
-        width: 480px;
-        height: 480px;
-
-        /* Keep 480px because JS uses this coordinate system */
-        transform: scale(0.75);
-
-        transform-origin: center center;
-    }
-
-    .tech-globe {
-        width: 200px;
-        height: 200px;
-    }
-
-    .tech-orbit::before {
-        width: 300px;
-        height: 300px;
-    }
-
-    .tech-orbit::after {
-        width: 280px;
-        height: 280px;
-    }
-
-    .tech-logo {
-        width: 62px;
-        height: 48px;
-        font-size: 8px;
-    }
-
-    .tech-logo span {
-        width: 22px;
-        height: 22px;
-        font-size: 9px;
-    }
+    flex-shrink: 0;
 }
 
 
 /* ==========================================
-   SMALL PHONE
+   TABLET
 ========================================== */
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 
     .tech-section {
         padding: 30px 0;
     }
 
     .tech-orbit-wrapper {
-        width: 320px;
-        height: 320px;
+        width: 400px;
+        height: 400px;
     }
 
     .tech-orbit {
-        width: 480px;
-        height: 480px;
-
-        transform: scale(0.67);
-        transform-origin: center center;
+        width: 400px;
+        height: 400px;
     }
 
     .tech-globe {
-        width: 200px;
-        height: 200px;
+        width: 210px;
+        height: 210px;
     }
 
     .tech-orbit::before {
-        width: 300px;
-        height: 300px;
+        width: 330px;
+        height: 330px;
     }
 
     .tech-orbit::after {
-        width: 280px;
-        height: 280px;
+        width: 300px;
+        height: 300px;
     }
 
     .tech-logo {
@@ -1586,7 +1367,56 @@ body.dark-mode .hamburger-lines span {
     .tech-logo span {
         width: 22px;
         height: 22px;
-        font-size: 9px;
+        font-size: 8px;
+    }
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 480px) {
+
+    .tech-section {
+        padding: 20px 0;
+    }
+
+    .tech-orbit-wrapper {
+        width: 350px;
+        height: 350px;
+    }
+
+    .tech-orbit {
+        width: 350px;
+        height: 350px;
+    }
+
+    .tech-globe {
+        width: 190px;
+        height: 190px;
+    }
+
+    .tech-orbit::before {
+        width: 290px;
+        height: 290px;
+    }
+
+    .tech-orbit::after {
+        width: 260px;
+        height: 260px;
+    }
+
+    .tech-logo {
+        width: 58px;
+        height: 45px;
+        font-size: 8px;
+    }
+
+    .tech-logo span {
+        width: 21px;
+        height: 21px;
+        font-size: 8px;
     }
 }
 
@@ -1598,104 +1428,43 @@ body.dark-mode .hamburger-lines span {
 @media (max-width: 360px) {
 
     .tech-section {
-        padding: 25px 0;
-    }
-
-    .tech-orbit-wrapper {
-        width: 300px;
-        height: 300px;
-    }
-
-    .tech-orbit {
-        width: 480px;
-        height: 480px;
-
-       transform: scale(0.75);
-        transform-origin: center center;
-    }
-
-    .tech-globe {
-        width: 200px;
-        height: 200px;
-    }
-
-    .tech-orbit::before {
-        width: 300px;
-        height: 300px;
-    }
-
-    .tech-orbit::after {
-        width: 280px;
-        height: 280px;
-    }
-
-    .tech-logo {
-        width: 62px;
-        height: 48px;
-        font-size: 8px;
-    }
-
-    .tech-logo span {
-        width: 22px;
-        height: 22px;
-        font-size: 9px;
-    }
-}
-/* ==========================================
-   320px PHONE - TECH ORBIT
-========================================== */
-
-@media (max-width: 360px) {
-
-    .tech-section {
-        width: 100%;
-        padding: 20px 0;
-        overflow: hidden;
+        padding: 10px 0;
     }
 
     .tech-orbit-wrapper {
         width: 320px;
-        height: 360px;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        margin: 0 auto;
+        height: 320px;
     }
 
     .tech-orbit {
-        width: 480px;
-        height: 480px;
-
-        transform: scale(0.75);
-        transform-origin: center center;
+        width: 320px;
+        height: 320px;
     }
 
     .tech-globe {
-        width: 200px;
-        height: 200px;
+        width: 175px;
+        height: 175px;
     }
 
     .tech-orbit::before {
-        width: 300px;
-        height: 300px;
+        width: 260px;
+        height: 260px;
     }
 
     .tech-orbit::after {
-        width: 280px;
-        height: 280px;
+        width: 235px;
+        height: 235px;
     }
 
     .tech-logo {
-        width: 62px;
-        height: 48px;
-        font-size: 8px;
+        width: 54px;
+        height: 42px;
+        font-size: 7px;
     }
 
     .tech-logo span {
-        width: 22px;
-        height: 22px;
-        font-size: 9px;
+        width: 19px;
+        height: 19px;
+        font-size: 7px;
     }
 }
