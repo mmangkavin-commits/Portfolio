@@ -747,6 +747,465 @@ body.dark-mode .er svg {
   fill: #C54ECB !important; /* Bright purple sun icon */
   stroke: #C54ECB !important;
 }
+/* ==========================================
+   TECH ORBIT
+========================================== */
+
+.tech-orbit {
+    position: relative;
+
+    width: 480px;
+    height: 480px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    perspective: 1000px;
+
+    transform-style: preserve-3d;
+
+    transition: transform 0.2s ease-out;
+}
+
+
+/* ==========================================
+   GLOBE
+========================================== */
+
+.tech-globe {
+
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    border-radius: 50%;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at 30% 25%,
+            #65416d,
+            #2d2035 40%,
+            #120e16 75%,
+            #050407
+        );
+
+    border: 2px solid #C54ECB;
+
+    box-shadow:
+        0 0 20px #C54ECB,
+        0 0 50px rgba(197, 78, 203, 0.45),
+        0 0 100px rgba(197, 78, 203, 0.2),
+        inset -40px -35px 60px rgba(0,0,0,0.9);
+
+    z-index: 2;
+
+}
+
+
+/* ==========================================
+   GLOBE CENTER
+========================================== */
+
+.globe-code {
+
+    font-size: 50px;
+
+    font-weight: 900;
+
+    color: #C54ECB;
+
+    text-shadow:
+        0 0 10px #C54ECB,
+        0 0 25px #C54ECB;
+
+}
+.logo{
+  object-fit: cover;
+    width: auto;
+    height: auto;
+}
+
+
+.globe-text {
+
+    margin-top: 8px;
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+    line-height: 1.5;
+
+}
+
+
+/* ==========================================
+   ORBIT RING
+========================================== */
+
+.tech-orbit::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 400px;
+    height: 400px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(197, 78, 203, 0.45);
+
+    box-shadow:
+        0 0 15px rgba(197, 78, 203, 0.25);
+
+    transform: rotateX(70deg);
+
+}
+
+
+.tech-orbit::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 360px;
+    height: 360px;
+
+    border-radius: 50%;
+
+    border: 1px dashed rgba(197, 78, 203, 0.25);
+
+    transform: rotateY(65deg);
+
+}
+
+
+/* ==========================================
+   TECHNOLOGY LOGOS
+========================================== */
+
+.tech-logo {
+
+    position: absolute;
+
+    width: 75px;
+    height: 58px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 3px;
+
+    border-radius: 12px;
+
+    background: rgba(25, 18, 30, 0.95);
+
+    border: 1px solid rgba(197, 78, 203, 0.7);
+
+    color: white;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    backdrop-filter: blur(8px);
+
+    box-shadow:
+        0 0 12px rgba(197, 78, 203, 0.4);
+
+    /*
+       JS will control:
+       left
+       top
+       transform
+    */
+
+    transition:
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+
+    z-index: 5;
+
+}
+
+
+/* Logo icon */
+
+.tech-logo span {
+
+    width: 27px;
+    height: 27px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 7px;
+
+    background: #C54ECB;
+
+    color: white;
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    box-shadow:
+        0 0 10px rgba(197, 78, 203, 0.5);
+
+}
+
+
+/* ==========================================
+   HOVER
+========================================== */
+
+.tech-orbit:hover .tech-logo {
+
+    border-color: #C54ECB;
+
+    box-shadow:
+        0 0 20px rgba(197, 78, 203, 0.7);
+
+}
+
+
+.tech-orbit:hover .tech-globe {
+
+    box-shadow:
+        0 0 30px #C54ECB,
+        0 0 70px rgba(197, 78, 203, 0.5),
+        0 0 110px rgba(197, 78, 203, 0.25),
+        inset -40px -35px 60px rgba(0,0,0,0.9);
+
+}
+
+/* TECH ORBIT SECTION */
+.tech-section {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* center horizontally */
+    align-items: center;
+    padding: 80px 0;
+}
+
+/* YOUR SPHERE */
+.tech-orbit {
+    position: relative;
+
+    width: 480px;
+    height: 480px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto;
+
+    perspective: 1000px;
+    transform-style: preserve-3d;
+
+    transition: transform 0.2s ease-out;
+}
+
+/* ==========================================
+   TECH SECTION
+========================================== */
+
+.tech-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 80px 0;
+
+    overflow: hidden;
+}
+
+
+/* ==========================================
+   RESPONSIVE WRAPPER
+========================================== */
+
+.tech-orbit-wrapper {
+    width: 480px;
+    height: 480px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-shrink: 0;
+}
+
+
+/* ==========================================
+   TECH ORBIT
+========================================== */
+
+.tech-orbit {
+    position: relative;
+
+    width: 480px;
+    height: 480px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    perspective: 1000px;
+    transform-style: preserve-3d;
+
+    transition: transform 0.2s ease-out;
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 768px) {
+
+    .tech-section {
+        padding: 60px 0;
+    }
+
+    .tech-orbit-wrapper {
+        width: 420px;
+        height: 420px;
+    }
+
+    .tech-orbit {
+        transform: scale(0.875);
+    }
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 480px) {
+
+    .tech-section {
+        width: 100%;
+        padding: 40px 0;
+
+        overflow: hidden;
+    }
+
+    .tech-orbit-wrapper {
+        width: 360px;
+        height: 360px;
+    }
+
+    .tech-orbit {
+        width: 480px;
+        height: 480px;
+
+        transform: scale(0.75);
+    }
+}
+
+
+/* ==========================================
+   SMALL PHONE 320px
+========================================== */
+
+@media (max-width: 360px) {
+
+    .tech-section {
+        padding: 30px 0;
+    }
+
+    .tech-orbit-wrapper {
+        width: 320px;
+        height: 320px;
+    }
+
+    .tech-orbit {
+        width: 480px;
+        height: 480px;
+
+        transform: scale(0.67);
+    }
+}
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+
+    .tech-orbit {
+
+        width: 360px;
+        height: 360px;
+
+    }
+
+    .tech-globe {
+
+        width: 200px;
+        height: 200px;
+
+    }
+
+    .tech-orbit::before {
+
+        width: 300px;
+        height: 300px;
+
+    }
+
+    .tech-orbit::after {
+
+        width: 280px;
+        height: 280px;
+
+    }
+
+    .tech-logo {
+
+        width: 62px;
+        height: 48px;
+
+        font-size: 8px;
+
+    }
+
+    .tech-logo span {
+
+        width: 22px;
+        height: 22px;
+
+        font-size: 9px;
+
+    }
+
+}
 
 /* ==================== RESPONSIVE BREAKPOINTS ==================== */
 
@@ -1017,4 +1476,226 @@ body.dark-mode .hamburger-lines span {
   .navbar-toggler {
     display: block !important;
   }
+}
+/* ==========================================
+   MOBILE TECH ORBIT
+========================================== */
+
+@media (max-width: 768px) {
+
+    .tech-section {
+        width: 100%;
+        padding: 40px 0;
+        overflow: hidden;
+    }
+
+    .tech-orbit-wrapper {
+        width: 360px;
+        height: 360px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        flex-shrink: 0;
+    }
+
+    .tech-orbit {
+        width: 480px;
+        height: 480px;
+
+        /* Keep 480px because JS uses this coordinate system */
+        transform: scale(0.75);
+
+        transform-origin: center center;
+    }
+
+    .tech-globe {
+        width: 200px;
+        height: 200px;
+    }
+
+    .tech-orbit::before {
+        width: 300px;
+        height: 300px;
+    }
+
+    .tech-orbit::after {
+        width: 280px;
+        height: 280px;
+    }
+
+    .tech-logo {
+        width: 62px;
+        height: 48px;
+        font-size: 8px;
+    }
+
+    .tech-logo span {
+        width: 22px;
+        height: 22px;
+        font-size: 9px;
+    }
+}
+
+
+/* ==========================================
+   SMALL PHONE
+========================================== */
+
+@media (max-width: 480px) {
+
+    .tech-section {
+        padding: 30px 0;
+    }
+
+    .tech-orbit-wrapper {
+        width: 320px;
+        height: 320px;
+    }
+
+    .tech-orbit {
+        width: 480px;
+        height: 480px;
+
+        transform: scale(0.67);
+        transform-origin: center center;
+    }
+
+    .tech-globe {
+        width: 200px;
+        height: 200px;
+    }
+
+    .tech-orbit::before {
+        width: 300px;
+        height: 300px;
+    }
+
+    .tech-orbit::after {
+        width: 280px;
+        height: 280px;
+    }
+
+    .tech-logo {
+        width: 62px;
+        height: 48px;
+        font-size: 8px;
+    }
+
+    .tech-logo span {
+        width: 22px;
+        height: 22px;
+        font-size: 9px;
+    }
+}
+
+
+/* ==========================================
+   320px PHONE
+========================================== */
+
+@media (max-width: 360px) {
+
+    .tech-section {
+        padding: 25px 0;
+    }
+
+    .tech-orbit-wrapper {
+        width: 300px;
+        height: 300px;
+    }
+
+    .tech-orbit {
+        width: 480px;
+        height: 480px;
+
+       transform: scale(0.75);
+        transform-origin: center center;
+    }
+
+    .tech-globe {
+        width: 200px;
+        height: 200px;
+    }
+
+    .tech-orbit::before {
+        width: 300px;
+        height: 300px;
+    }
+
+    .tech-orbit::after {
+        width: 280px;
+        height: 280px;
+    }
+
+    .tech-logo {
+        width: 62px;
+        height: 48px;
+        font-size: 8px;
+    }
+
+    .tech-logo span {
+        width: 22px;
+        height: 22px;
+        font-size: 9px;
+    }
+}
+/* ==========================================
+   320px PHONE - TECH ORBIT
+========================================== */
+
+@media (max-width: 360px) {
+
+    .tech-section {
+        width: 100%;
+        padding: 20px 0;
+        overflow: hidden;
+    }
+
+    .tech-orbit-wrapper {
+        width: 320px;
+        height: 360px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        margin: 0 auto;
+    }
+
+    .tech-orbit {
+        width: 480px;
+        height: 480px;
+
+        transform: scale(0.75);
+        transform-origin: center center;
+    }
+
+    .tech-globe {
+        width: 200px;
+        height: 200px;
+    }
+
+    .tech-orbit::before {
+        width: 300px;
+        height: 300px;
+    }
+
+    .tech-orbit::after {
+        width: 280px;
+        height: 280px;
+    }
+
+    .tech-logo {
+        width: 62px;
+        height: 48px;
+        font-size: 8px;
+    }
+
+    .tech-logo span {
+        width: 22px;
+        height: 22px;
+        font-size: 9px;
+    }
 }

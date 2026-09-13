@@ -58,3 +58,80 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+const techOrbit = document.getElementById("techOrbit");
+
+if (techOrbit) {
+
+    const logos = techOrbit.querySelectorAll(".tech-logo");
+
+    let angle = 0;
+
+    // Speed of rotation
+    const speed = 0.0025;
+
+    function animateOrbit() {
+
+        angle += speed;
+
+        const rect = techOrbit.getBoundingClientRect();
+
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        // Size of circular path
+        const radiusX = 205;
+        const radiusY = 205;
+
+        logos.forEach((logo, index) => {
+
+            // Evenly distribute logos around circle
+            const logoAngle =
+                angle +
+                (index / logos.length) * Math.PI * 2;
+
+            const x =
+                centerX +
+                Math.cos(logoAngle) * radiusX;
+
+            const y =
+                centerY +
+                Math.sin(logoAngle) * radiusY;
+
+            /*
+             * Fake 3D depth
+             *
+             * Front = bigger
+             * Back = smaller
+             */
+            const depth =
+                (Math.sin(logoAngle) + 1) / 2;
+
+            const scale =
+                0.75 + depth * 0.35;
+
+            const zIndex =
+                Math.round(depth * 100);
+
+            logo.style.left =
+                `${x - logo.offsetWidth / 2}px`;
+
+            logo.style.top =
+                `${y - logo.offsetHeight / 2}px`;
+
+            logo.style.transform =
+                `scale(${scale})`;
+
+            logo.style.zIndex =
+                zIndex;
+
+            logo.style.opacity =
+                0.65 + depth * 0.35;
+
+        });
+
+        requestAnimationFrame(animateOrbit);
+
+    }
+
+    animateOrbit();
+}
